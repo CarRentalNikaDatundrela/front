@@ -1,0 +1,1 @@
+export const BASE_URL = 'http://10.4.4.67:5001'
