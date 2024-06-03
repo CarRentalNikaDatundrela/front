@@ -9,7 +9,7 @@ export async function getCarsByBrand(brands: string[]) {
       body: JSON.stringify({
         brand: brands,
       }),
-      cache: 'no-store'
+      // cache: 'no-store'
     });
     const data = await response.json();
     return data;
