@@ -10,7 +10,7 @@ async function MostViewedSection() {
       <div className="container mx-auto">
         <h2 className="text-center font-bold text-[2.6rem]">Most Viewed Cars</h2>
         <div className="grid grid-cols-3 gap-5 my-[40px]">
-          {mostViewedCars.map((car: Car) => {
+          {mostViewedCars?.map((car: Car) => {
             return <SingleCarItem key={car.carID} car={car} />;
           })}
         </div>
