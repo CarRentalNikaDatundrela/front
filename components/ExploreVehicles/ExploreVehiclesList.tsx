@@ -12,11 +12,11 @@ function ExploreVehiclesList({
 }) {
   const [selectedBrand, setSelectedBrand] = useState(brands[0]);
   const [currentCars, setCurrentCars] = useState(() => {
-    return cars.filter((car) => car.brand === selectedBrand);
+    return cars?.filter((car) => car.brand === selectedBrand);
   });
 
   useEffect(() => {
-    setCurrentCars(cars.filter((car) => car.brand === selectedBrand));
+    setCurrentCars(cars?.filter((car) => car.brand === selectedBrand));
   }, [selectedBrand, cars]);
 
   return (
@@ -39,7 +39,7 @@ function ExploreVehiclesList({
         </ul>
       </div>
       <div className="grid grid-cols-3 gap-4 my-[50px]">
-        {currentCars.map((car: Car) => {
+        {currentCars?.map((car: Car) => {
           return <SingleCarItem key={car.carID} car={car} />;
         })}
       </div>
