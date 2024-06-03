@@ -1,7 +1,6 @@
 import { BASE_URL } from "../utils/api";
 
 export async function getCarsByBrand(brands: string[]) {
-  try {
     const response = await fetch(`${BASE_URL}/car/filter`, {
       method: "POST",
       headers: {
@@ -14,12 +13,8 @@ export async function getCarsByBrand(brands: string[]) {
     });
     const data = await response.json();
     return data;
-  } catch (e) {
-    console.log(e);
-  }
 }
 export async function getMostViewedCars(amount: number) {
-  try {
     const response = await fetch(`${BASE_URL}/car/popular`, {
       method: "POST",
       headers: {
@@ -31,7 +26,5 @@ export async function getMostViewedCars(amount: number) {
     });
     const data = await response.json();
     return data;
-  } catch (e) {
-    console.log(e);
-  }
+  
 }
