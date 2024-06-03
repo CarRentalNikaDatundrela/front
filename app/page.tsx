@@ -1,12 +1,15 @@
 import Image from "next/image";
 import Header from "@/components/Header";
+import ExploreVehiclesSection from "@/components/ExploreVehicles/ExploreVehiclesSection";
+import MostViewedSection from "@/components/MostViewed/MostViewedSection";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
     <>
       <Header />
       <main>
-        <div className="border-b-[1px] border-solid mb-10 border-gray-4Y00">
+        <div className="border-b-[1px] border-solid mb-10 border-[#F5F5F5]">
           <div className="container mx-auto">
             <ul className="flex justify-between items-center py-[40px]">
               <li className="">
@@ -60,7 +63,10 @@ export default function Home() {
             </ul>
           </div>
         </div>
+        <ExploreVehiclesSection />
+        <MostViewedSection />
       </main>
+      <Footer />
     </>
   );
 }
