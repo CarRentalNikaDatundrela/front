@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons/faMagnifyingGlass";
+import Link from "next/link";
 
 function NavBar() {
   return (
@@ -8,10 +9,12 @@ function NavBar() {
         <li>datundrela</li>
         <li>
           <ul className="flex gap-4">
-            <li className="text-[1rem] font-semibold">All Cars</li>
-            <li className="text-[1rem] font-semibold">Bla</li>
-            <li className="text-[1rem] font-semibold">Bla</li>
-            <li className="text-[1rem] font-semibold">Bla</li>
+            <li className="text-[1rem] cursor-pointer font-semibold">
+              <Link href={'/cars'}>All Cars</Link>
+            </li>
+            <li className="text-[1rem] cursor-pointer font-semibold">Bla</li>
+            <li className="text-[1rem] cursor-pointer font-semibold">Bla</li>
+            <li className="text-[1rem] cursor-pointer font-semibold">Bla</li>
           </ul>
         </li>
         <li>
