@@ -64,7 +64,103 @@ const nextConfig = {
             },
             {
                 protocol: 'https',
-                hostname: 'upload.wikimedia.org',
+                hostname: 'smartcdn.gprod.postmedia.digital',
+            },
+            {
+                protocol: 'https',
+                hostname: 'res.cloudinary.com',
+            },
+            {
+                protocol: 'https',
+                hostname: 'www.gearpatrol.com',
+            },
+            {
+                protocol: 'https',
+                hostname: 'cdn.motor1.com',
+            },
+            {
+                protocol: 'https',
+                hostname: 'www.dodge.com',
+            },
+            {
+                protocol: 'https',
+                hostname: 'atelierjalaper.com',
+            },
+            {
+                protocol: 'https',
+                hostname: 'www.experienceferrari.com',
+            },
+            {
+                protocol: 'https',
+                hostname: 'www.kbb.com',
+            },
+            {
+                protocol: 'https',
+                hostname: 'www.autocar.co.uk',
+            },
+            {
+                protocol: 'https',
+                hostname: 'encrypted-tbn0.gstatic.com',
+            },
+            {
+                protocol: 'https',
+                hostname: 's1.cdn.autoevolution.com',
+            },
+            {
+                protocol: 'https',
+                hostname: 'www.thedrive.com',
+            },
+            {
+                protocol: 'https',
+                hostname: 'www.thedrive.com',
+            },
+            {
+                protocol: 'https',
+                hostname: 'www.thedrive.com',
+            },
+            {
+                protocol: 'https',
+                hostname: 'www.thedrive.com',
+            },
+            {
+                protocol: 'https',
+                hostname: 'www.thedrive.com',
+            },
+            {
+                protocol: 'https',
+                hostname: 'www.thedrive.com',
+            },
+            {
+                protocol: 'https',
+                hostname: 'www.thedrive.com',
+            },
+            {
+                protocol: 'https',
+                hostname: 'www.thedrive.com',
+            },
+            {
+                protocol: 'https',
+                hostname: 'www.thedrive.com',
+            },
+            {
+                protocol: 'https',
+                hostname: 'www.thedrive.com',
+            },
+            {
+                protocol: 'https',
+                hostname: 'www.thedrive.com',
+            },
+            {
+                protocol: 'https',
+                hostname: 'www.thedrive.com',
+            },
+            {
+                protocol: 'https',
+                hostname: 'www.thedrive.com',
+            },
+            {
+                protocol: 'https',
+                hostname: 'www.thedrive.com',
             },
         ]
     }

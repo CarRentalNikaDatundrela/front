@@ -13,10 +13,8 @@ const SingleCarItem = ({ car }: { car: Car }) => {
       <Image
         src={car.imageURL}
         alt={title}
-        layout="fill"
-        objectFit="cover"
-        objectPosition="center"
-        style={{ zIndex: 0 }}
+        fill
+        style={{ zIndex: 0,  objectFit: "cover", objectPosition: "center" }}
       />
       <div className="p-4 relative z-10 mt-auto">
         <h3 className="text-xl font-bold">{title}</h3>
