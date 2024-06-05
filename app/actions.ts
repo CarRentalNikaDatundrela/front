@@ -1,31 +1,44 @@
 "use server";
-import { getAllCars, getCarsWithFilter } from "./api/api";
+import { getAllCars, getCarsWithFilter, incrementView } from "./api/api";
 
 export async function setSearchParams(
   name: string,
   value: string,
-  checked: boolean,
-  currentSearchParams: { [key: string]: string }[]
+  currentSearchParams: { [key: string]: string }[],
+  isCheckbox: boolean,
+  checked?: boolean,
 ) {
   let updatedSearchParams = [...currentSearchParams];
   const index = updatedSearchParams.findIndex((param) => param[name]);
 
-  if (checked) {
-    if (index !== -1) {
-      updatedSearchParams[index][name] += `,${value}`;
+  if (isCheckbox) {
+    if (checked) {
+      if (index !== -1) {
+        updatedSearchParams[index][name] += `,${value}`;
+      } else {
+        updatedSearchParams.push({ [name]: value });
+      }
     } else {
-      updatedSearchParams.push({ [name]: value });
+      if (index !== -1) {
+        const values = updatedSearchParams[index][name]
+          .split(",")
+          .filter((v) => v !== value);
+        if (values.length > 0) {
+          updatedSearchParams[index][name] = values.join(",");
+        } else {
+          updatedSearchParams.splice(index, 1);
+        }
+      }
     }
   } else {
     if (index !== -1) {
-      const values = updatedSearchParams[index][name]
-        .split(",")
-        .filter((v) => v !== value);
-      if (values.length > 0) {
-        updatedSearchParams[index][name] = values.join(",");
-      } else {
+      if (value === "") {
         updatedSearchParams.splice(index, 1);
+      } else {
+        updatedSearchParams[index][name] = value;
       }
+    } else if (value !== "") {
+      updatedSearchParams.push({ [name]: value });
     }
   }
 
@@ -38,8 +51,11 @@ export async function setSearchParams(
   return params;
 }
 
+
 export async function getCarsByFilter(searchParams: { [key: string]: string }) {
+  console.log(searchParams)
   if (Object.keys(searchParams).length === 0) {
+    console.log("joooooooooo")
     return getAllCars();
   } else {
     const filter: FilterAPIBody = {};
@@ -51,6 +67,21 @@ export async function getCarsByFilter(searchParams: { [key: string]: string }) {
     }
     if (searchParams["Brand"]) {
       filter.brand = searchParams["Brand"].split(",");
+    }
+    if (searchParams["YearMin"]) {
+      filter.yearMin = parseInt(searchParams["YearMin"]);
+    }
+    if (searchParams["YearMax"]) {
+      filter.yearMax = parseInt(searchParams["YearMax"]);
+    }
+    if (searchParams["PriceMin"]) {
+      filter.priceMin = parseInt(searchParams["PriceMin"]);
+    }
+    if (searchParams["PriceMax"]) {
+      filter.priceMax = parseInt(searchParams["PriceMax"]);
+    }
+    if (searchParams["Capacity"]) {
+      filter.capacity = parseInt(searchParams["Capacity"]);
     }
 
     if (Object.keys(filter).length === 0) {

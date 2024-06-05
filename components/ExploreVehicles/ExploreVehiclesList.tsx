@@ -2,13 +2,16 @@
 import { useEffect, useState } from "react";
 import Button from "../shared/Button";
 import SingleCarItem from "../shared/SingleCarItem";
+import Link from "next/link";
 
 function ExploreVehiclesList({
   cars,
   brands,
+  handleCarView
 }: {
   cars: Car[];
   brands: string[];
+  handleCarView: (carId: number) => void;
 }) {
   const [selectedBrand, setSelectedBrand] = useState(brands[0]);
   const [currentCars, setCurrentCars] = useState(() => {
@@ -40,11 +43,11 @@ function ExploreVehiclesList({
       </div>
       <div className="grid grid-cols-3 gap-4 my-[50px]">
         {currentCars?.map((car: Car) => {
-          return <SingleCarItem key={car.carID} car={car} />;
+          return <SingleCarItem key={car.carID} car={car} handleCarView={handleCarView} />;
         })}
       </div>
       <Button className="block mx-auto">
-        View All Cars
+        <Link href={'/cars'}>View All Cars</Link>
       </Button>
     </div>
   );

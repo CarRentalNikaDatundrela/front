@@ -24,6 +24,8 @@ function FilterCheckbox({
       if (values.includes(filterValue)) {
         setIsChecked(true);
       }
+    } else {
+      setIsChecked(false);
     }
   }, [filterKey, filterValue, searchParams]);
 

@@ -6,11 +6,13 @@ function NavBar() {
   return (
     <div>
       <ul className="flex justify-between items-center py-[25px]">
-        <li>datundrela</li>
+        <li>
+          <Link href={"/"}>datundrela</Link>
+        </li>
         <li>
           <ul className="flex gap-4">
             <li className="text-[1rem] cursor-pointer font-semibold">
-              <Link href={'/cars'}>All Cars</Link>
+              <Link href={"/cars"}>All Cars</Link>
             </li>
             <li className="text-[1rem] cursor-pointer font-semibold">Bla</li>
             <li className="text-[1rem] cursor-pointer font-semibold">Bla</li>
@@ -18,11 +20,15 @@ function NavBar() {
           </ul>
         </li>
         <li>
-            <ul>
-                <li className="cursor-pointer">
-                    <FontAwesomeIcon width={16} height={16} icon={faMagnifyingGlass} />
-                </li>
-            </ul>
+          <ul>
+            <li className="cursor-pointer">
+              <FontAwesomeIcon
+                width={16}
+                height={16}
+                icon={faMagnifyingGlass}
+              />
+            </li>
+          </ul>
         </li>
       </ul>
     </div>

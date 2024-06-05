@@ -22,4 +22,8 @@ interface FilterAPIBody {
   brand?: string[];
   city?: string[];
   capacity?: number;
+  yearMin?: number;
+  yearMax?: number;
+  priceMin?: number;
+  priceMax?: number;
 }

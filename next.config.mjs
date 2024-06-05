@@ -112,11 +112,11 @@ const nextConfig = {
             },
             {
                 protocol: 'https',
-                hostname: 'www.thedrive.com',
+                hostname: 'www.postcrescent.com',
             },
             {
                 protocol: 'https',
-                hostname: 'www.thedrive.com',
+                hostname: 'static1.topspeedimages.com',
             },
             {
                 protocol: 'https',
