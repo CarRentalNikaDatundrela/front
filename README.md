@@ -4,7 +4,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 Running locally in development mode
 To get started, just clone the repository and run npm install && npm run dev:
 ```bash
-git clone https://github.com/iaincollins/nextjs-starter.git
+git clone https://github.com/CarRentalNikaDatundrela/front.git
 npm install
 npm run dev
 ```
